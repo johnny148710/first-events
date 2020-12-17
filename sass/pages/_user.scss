@@ -1,0 +1,25 @@
+.user-registration-page {
+    .wrapper {
+        padding-top: 8rem;
+
+        @include media-breakpoint-down(sm) {
+            // padding-top: 0;
+        }
+    }
+
+    li {
+        &.is-active {
+            a {
+                background: $darkBlue;
+            }
+        }
+    }
+
+    .user-registration-MyAccount-navigation-link {
+        @include media-breakpoint-down(sm) {
+            a {
+                text-align: center;
+            }
+        }
+    }
+}

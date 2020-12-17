@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Gothic';
+    
+    src: url('../fonts/gothic.eot'); /* IE9 Compat Modes */
+    src: local('Gothic'), local('Gothic'),
+         url('../fonts/gothic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/gothic.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/gothic.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/gothic.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/gothic.svg#Poppins') format('svg'); /* Legacy iOS */
+  }
+ 

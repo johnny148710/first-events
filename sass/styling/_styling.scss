@@ -1,0 +1,117 @@
+h1, h2, h3, h4, h5, h6 {
+    font-family: $fontPoppins;
+    color: $green;
+}
+
+h1 {
+    font-size: 4.5rem;
+
+    @include media-breakpoint-down(sm) {
+        font-size: 3.5rem;
+    }
+}
+
+p, a, button {
+    font-family: $fontRoboto;
+}
+
+a {
+    font-family: $fontCenturyGothic;
+    color: $green;
+    transition: .2s ease all;
+    position: relative;
+    display: inline-block;
+    padding: 1em;
+    text-decoration: none;
+    vertical-align: middle;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    transform: perspective(1px) translateZ(0);
+    cursor: pointer;
+    transition-duration: 0.3s;
+    transition-property: color;
+
+    &::before {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        height: 3px;
+        background: $green;
+        transform: scaleX(0);
+        transform-origin: 50%;
+        transition-timing-function: ease-out;
+        transition-duration: 0.3s;
+        transition-property: transform;
+        content: "";
+    }
+
+    &:hover::before {
+        transform: scaleX(1);
+    }
+
+    &:hover {
+        color: $green;
+        text-decoration: none;
+    }
+}
+
+button,
+input[type="submit"] {
+    color: $green;
+    border: none;
+    border-radius: 50px;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    background: transparent;
+    border: 3px solid $green;
+    transition: .2s ease all;
+    
+    @include media-breakpoint-down(sm) {
+        margin-bottom: 3rem;
+    }
+    
+    &:hover {
+        border-color: $green;
+        color: $white;
+        background: $green;
+    }
+}
+
+// Form 
+
+.user-registration {
+    border: none;
+
+    form {
+        .form-row {
+            display: inline-block; 
+            width: 100%;
+            
+            input {
+                border: 1px solid $green;
+                border-radius: 30px !important;
+                padding: 0.5rem 1rem !important; 
+            }
+        }
+        
+        button {
+            color: $white;
+            background: $green;
+            border-radius: 50px;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            font-weight: 100;
+            margin-top: 1rem;
+            border: 3px solid transparent !important;
+            transition: .2s ease all;
+            
+            &:hover {
+                border: 3px solid $green !important;
+                color: $green;
+                background: $white;
+            }
+        }
+    }
+}

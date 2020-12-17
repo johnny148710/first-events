@@ -1,0 +1,129 @@
+.hero {
+    position: relative;
+    height: 100vh;
+    margin-top: 0;
+    padding-top: 12rem;
+
+    @include media-breakpoint-down(sm) {
+        padding-top: 6rem;
+    }
+
+    &__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+    }
+
+    &__background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: auto;
+        z-index: -1;
+        transform: translate(-50%, -50%);
+    }
+
+    &__text {
+        position: relative;
+    
+        h1 {
+            text-indent: -9999px;
+            font-family: $fontCenturyGothic;
+            font-weight: 800;
+            animation: slide 2s forwards;
+            animation-delay: 3s;
+        }
+    
+        h2 {
+            text-indent: -9999px;
+            font-size: 3rem;
+            color: $white;
+            font-weight: 100;
+            font-style: italic;
+            animation: slide 2s forwards;
+            animation-delay: 2s;
+    
+            @include media-breakpoint-down(sm) {
+                font-size: 2.5rem;
+                margin-bottom: initial;
+            }
+        }
+
+        p {
+            text-indent: -9999px;
+            color: $white;
+            font-weight: 100;
+            font-size: 1.5rem;
+            animation: slide 2s forwards;
+            animation-delay: 4s;
+        }
+
+        button {
+            position: absolute;
+            bottom: -90px;
+            left: -9999px;
+            animation: slide-button 2s forwards;
+            animation-delay: 5s;  
+        }
+    }
+
+    @keyframes slide {
+        100% { text-indent: 0; }
+    }
+
+    @keyframes slide-button {
+        100% { left: 0; }
+    }
+
+    svg {
+        animation: move 20s ease-in-out infinite;
+        transform-origin: 50% 50%;
+
+        &:nth-of-type(2) {
+            animation: move-two 20s ease-in-out infinite;
+            position: absolute;
+            top: 0;
+            left: 20%;
+            transform: rotateY(180deg);
+            opacity: 0.8;
+        }
+
+        @include media-breakpoint-down(sm) {
+            display: none;
+        }
+    }
+}
+
+@keyframes move {
+	0%   { transform: scale(1)   translate(10px, -30px); }
+	38%  { transform: scale(0.8, 1) rotate(160deg); }
+	40%  { transform: scale(0.8, 1) rotate(160deg); }
+	78%  { transform: scale(1.3) rotate(-20deg); }
+	80%  { transform: scale(1.3) rotate(-20deg); }
+	100% { transform: scale(1)   translate(10px, -30px);  }
+}
+
+@keyframes move-two {
+    0%   { transform: scale(1)   translate(0px, -30px);  width: 200px; }
+	38%  { transform: scale(0.8, 1) rotate(-160deg); width: 250px; }
+	40%  { transform: scale(0.8, 1) rotate(-160deg); width: 200px; }
+	78%  { transform: scale(1.3) rotate(20deg); width: 250px; }
+	80%  { transform: scale(1.3) rotate(20deg); width: 250px; }
+	100% { transform: scale(1)   translate(10px, -30px); width: 200px; }
+}
